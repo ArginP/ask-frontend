@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>System Monitoring Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+
+<body class="bg-gray-50 font-sans">
+
+<header class="bg-white border-b border-gray-200 fixed w-full z-40">
+    <div class="flex items-center justify-between px-6 py-3 max-w-7xl mx-auto">
+        <div class="absolute left-4">
+            <button id="sidebar-toggle" class="p-2 hover:bg-gray-100 rounded-md"><i
+                    class="fas fa-bars text-xl text-gray-600"></i></button>
+        </div>
+        <div class="flex-1 flex">
+            <div class="w-full max-w-2xl relative">
+                            <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </span>
+                <input type="text"
+                       class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-custom focus:border-custom"
+                       placeholder="Search metrics, systems..."/>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col transition-all duration-300 ease-in-out mt-14">
+
+        <nav class="flex-1 overflow-y-auto p-4">
+            <div class="space-y-1">
+                <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-custom rounded-md bg-gray-100">
+                    <i class="fas fa-chart-line w-5 h-5 mr-2"></i>
+                    Dashboard
+                </a>
+                <a href="#"
+                   class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                    <i class="fas fa-server w-5 h-5 mr-2"></i>
+                    Systems
+                </a>
+                <a href="#"
+                   class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                    <i class="fas fa-bell w-5 h-5 mr-2"></i>
+                    Alerts
+                </a>
+                <a href="#"
+                   class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100">
+                    <i class="fas fa-cog w-5 h-5 mr-2"></i>
+                    Settings
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <div class="flex-1 flex flex-col overflow-hidden pt-14">
+        <main class="flex-1 overflow-y-auto p-6">
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-8">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <h2 class="text-lg font-semibold mb-4">System Overview</h2>
+                        <div id="systemChart" class="h-96"></div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="bg-white rounded-lg shadow p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-lg font-semibold">Parameters</h2>
+                            <button class="text-sm text-custom hover:text-custom-600">
+                                <i class="fas fa-sync-alt mr-1"></i>
+                                Refresh
+                            </button>
+                        </div>
+                        <div class="space-y-4">
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Param 1</span>
+                                <span class="text-sm font-medium">78%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-custom h-2 rounded-full" style="width: 78%"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Param 2</span>
+                                <span class="text-sm font-medium">64%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-custom h-2 rounded-full" style="width: 64%"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Param 3</span>
+                                <span class="text-sm font-medium">92%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-custom h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Param 4</span>
+                                <span class="text-sm font-medium">12%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-custom h-2 rounded-full" style="width: 12%"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Param 5</span>
+                                <span class="text-sm font-medium">37%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-custom h-2 rounded-full" style="width: 37%"></div>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-600">Param 6</span>
+                                <span class="text-sm font-medium">22%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-custom h-2 rounded-full" style="width: 22%"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12">
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-4 border-b border-gray-200"><div class="flex items-center justify-between"><div class="flex space-x-4"><button class="px-3 py-2 text-sm font-medium text-custom border-b-2 border-custom">All Systems</button><button class="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">System 1</button><button class="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">System 2</button><button class="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">System 3</button></div><div class="flex space-x-4"><button class="px-3 py-2 text-sm font-medium text-custom border-b-2 border-custom">All Messages</button><button class="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">Warnings</button><button class="px-3 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">Errors</button></div><button class="!rounded-button text-sm px-4 py-2 border border-gray-300 hover:bg-gray-50">Clear Console</button></div></div>
+                        <div class="p-4">
+                            <div class="space-y-3">
+                                <div class="flex items-center text-sm">
+                                    <span class="w-20 text-gray-500">12:45:32</span>
+                                    <span class="w-24 px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">System 1</span>
+                                    <span class="ml-4">Param 1 normalized</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-20 text-gray-500">12:44:18</span>
+                                    <span class="w-24 px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Warning</span>
+                                    <span class="ml-4">Param 3 above 80%</span>
+                                </div>
+                                <div class="flex items-center text-sm">
+                                    <span class="w-20 text-gray-500">12:43:55</span>
+                                    <span class="w-24 px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">Error</span>
+                                    <span class="ml-4">Network connection timeout</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>
+    const chart = echarts.init(document.getElementById('systemChart'));
+    const option = {
+        animation: false,
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            data: ['Param 1', 'Param 2', 'Param 3']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['12:00', '12:10', '12:20', '12:30', '12:40', '12:50', '13:00']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                name: 'Param 1',
+                type: 'line',
+                data: [45, 52, 78, 64, 58, 72, 68]
+            },
+            {
+                name: 'Param 2',
+                type: 'line',
+                data: [32, 45, 64, 58, 52, 48, 50]
+            },
+            {
+                name: 'Param 3',
+                type: 'line',
+                data: [82, 75, 92, 86, 88, 84, 90]
+            }
+        ]
+    };
+    chart.setOption(option);
+
+    window.addEventListener('resize', () => {
+        chart.resize();
+    });
+</script>
