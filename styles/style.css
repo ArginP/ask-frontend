@@ -1,3 +1,25 @@
+#burgerBtn {
+  user-select: none;
+}
+#burgerBtn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+#burgerBtn:focus {
+  outline: 4px solid rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+  color: #ffffff;
+}
+#burgerBtn span {
+  font-size: 0.2rem;
+  color: transparent;
+}
+
+.nav-pills li {
+  width: 100%;
+  line-height: 1.5rem;
+}
+
 .nav-link {
   color: #000000;
   font-weight: 500;
@@ -25,7 +47,7 @@ main .side-nav {
   justify-content: center;
 }
 .col-in-row .placeholder-text {
-  color: #666666;
+  color: #555555;
 }
 
 .col-in-row-1 {

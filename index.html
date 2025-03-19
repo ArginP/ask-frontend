@@ -9,17 +9,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
             defer></script>
+    <script src="scripts/index.js" defer></script>
     <title>ASC</title>
 </head>
 <body>
 
 <nav class="navbar sticky-top bg-body-tertiary border-bottom">
     <div class="container-fluid">
-        <a class="navbar-brand m-1" id="burgerBtn" type="button" data-bs-toggle="collapse"
-           data-bs-target="#collapseWidthExample" aria-expanded="true" aria-controls="collapseWidthExample">&#9776;</a>
+        <button class="navbar-brand m-1 btn btn-outline-dark" id="burgerBtn" type="button" data-bs-toggle="collapse"
+           data-bs-target="#collapseWidthExample" aria-expanded="true" aria-controls="collapseWidthExample"><span>Свернуть</span>&#9776;<span>навигацию</span></button>
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit" disabled>Найти</button>
+            <button class="btn btn-outline-dark" type="submit" id="searchBtn">Найти</button>
         </form>
         <div></div>
         <div></div>
@@ -31,8 +32,8 @@
     <div class="container-fluid h-100">
         <div class="row flex-nowrap h-100 row-container">
             <div class="col-auto col-xl-1 px-0 bg-body-tertiary h-100 side-nav collapse show collapse-horizontal" id="collapseWidthExample">
-                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
-                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 w-100 text-white">
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 w-100 align-items-center align-items-sm-start"
                         id="menu">
                         <li class="nav-item">
                             <a href="#" class="nav-link align-middle px-0" id="homeBtn">
