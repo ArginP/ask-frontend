@@ -1,3 +1,28 @@
+.nav-link {
+  color: #000000;
+  font-weight: 500;
+}
 
+main {
+  height: calc(100vh - 65px);
+}
+
+.col-in-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.col-in-row .placeholder-text {
+  color: #666666;
+}
+
+.col-in-row-1 {
+  height: 40rem;
+}
+
+.col-in-row-2 {
+  height: 10rem;
+}
 
 /*# sourceMappingURL=style.css.map */
