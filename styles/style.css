@@ -5,6 +5,17 @@
 
 main {
   height: calc(100vh - 65px);
+  overflow: hidden;
+}
+main .main-container {
+  width: 100%;
+  transition: width 0.5s ease-in-out;
+}
+main .row-container:has(.side-nav.show) .main-container {
+  width: calc(100% - 8rem);
+}
+main .side-nav {
+  max-width: 8rem;
 }
 
 .col-in-row {

@@ -1,4 +1,3 @@
-
 .nav-link {
   color: #000000;
   font-weight: 500;
@@ -6,6 +5,21 @@
 
 main {
   height: calc(100vh - 65px);
+  overflow: hidden;
+
+  .main-container {
+    width: 100%; // Базовая ширина, когда боковая панель скрыта
+    transition: width 0.5s ease-in-out; // Плавный переход для изменения ширины
+  }
+
+  // Когда .row содержит .side-nav с классом .show
+  .row-container:has(.side-nav.show) .main-container {
+    width: calc(100% - 8rem); // Учитывает ширину боковой панели
+  }
+
+  .side-nav {
+    max-width: 8rem; // Фиксированная ширина боковой панели
+  }
 }
 
 .col-in-row {
@@ -16,7 +30,6 @@ main {
 
   .placeholder-text {
     color: #666666;
-
   }
 }
 
