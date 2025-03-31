@@ -39,8 +39,7 @@ $colorBlack: #000000;
 }
 
 main {
-  height: calc(100vh - 65px);
-  overflow: hidden;
+  height: max-content;
 
   .main-container {
     width: 100%; // Базовая ширина, когда боковая панель скрыта
